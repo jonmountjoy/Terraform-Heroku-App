@@ -10,6 +10,10 @@ variable "app_name" {
 resource "heroku_app" "example" {
   name   = "${var.app_name}"
   region = "us"
+
+  config_vars = {
+    FOO = "bar"
+  }
 }
 
 # Build code & release to the app, pointing to our Node getting started app
